@@ -8,9 +8,9 @@ namespace WebAPI.App_Start
 {
     public class Config
     {
-        public static string nameserver = "yeidabd.database.windows.net";
-        public static string namedatabase = "app";
-        public static string username = "yeidabd20";
-        public static string Userpass = "yeidabd@2020";
+        public static string nameserver = "servidor base de datos";
+        public static string namedatabase = "nombre base de datos";
+        public static string username = "usuario";
+        public static string Userpass = "contraseña";
     }
 }
