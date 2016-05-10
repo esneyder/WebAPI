@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="InstituteEntities-Web.config Connection String" description="InstituteEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Institute.csdl|res://*/Models.Institute.ssdl|res://*/Models.Institute.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=yeidabd.database.windows.net;initial catalog=app;user id=yeidabd20;password=yeidabd@2020;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Developer\\Documents\\Visual\ Studio\ 2015\\Projects\\WebAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='InstituteEntities']/@connectionString" />
+  </parameter>
+</parameters>

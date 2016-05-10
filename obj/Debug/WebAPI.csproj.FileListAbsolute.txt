@@ -1,0 +1,39 @@
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\WebAPI.dll.config
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\WebAPI.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\WebAPI.pdb
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\EntityFramework.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\EntityFramework.SqlServer.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\Newtonsoft.Json.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Net.Http.Formatting.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Web.Http.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Web.Http.WebHost.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\EntityFramework.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\EntityFramework.SqlServer.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\Newtonsoft.Json.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Net.Http.Formatting.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Web.Http.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\bin\System.Web.Http.WebHost.xml
+D:\Webserver\Sandbox\Dot Net\WebAPI\obj\Debug\WebAPI.dll
+D:\Webserver\Sandbox\Dot Net\WebAPI\obj\Debug\WebAPI.pdb
+D:\Webserver\Sandbox\Dot Net\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\WebAPI.dll.config
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\WebAPI.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\WebAPI.pdb
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\EntityFramework.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\EntityFramework.SqlServer.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\Newtonsoft.Json.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Net.Http.Formatting.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Web.Http.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Web.Http.WebHost.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\EntityFramework.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\EntityFramework.SqlServer.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\Newtonsoft.Json.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Net.Http.Formatting.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Web.Http.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.Web.Http.WebHost.xml
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\obj\Debug\WebAPI.csprojResolveAssemblyReference.cache
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\obj\Debug\WebAPI.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\Microsoft.Azure.AppService.ApiApps.Service.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Developer\Documents\Visual Studio 2015\Projects\WebAPI\bin\System.IdentityModel.Tokens.Jwt.xml

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="appModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCamarero">
+    <Key>
+      <PropertyRef Name="IdCamarero" />
+    </Key>
+    <Property Name="IdCamarero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="80" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblFacturas" Relationship="Self.fk_fact_camarero" FromRole="tblCamarero" ToRole="tblFactura" />
+  </EntityType>
+  <EntityType Name="tblCliente">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="80" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+    <Property Name="Nota" Type="String" MaxLength="150" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblFacturas" Relationship="Self.fk_fact_client" FromRole="tblCliente" ToRole="tblFactura" />
+  </EntityType>
+  <EntityType Name="tblCocinero">
+    <Key>
+      <PropertyRef Name="IdCocinero" />
+    </Key>
+    <Property Name="IdCocinero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombres" Type="String" MaxLength="80" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="80" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblDetalleFacturas" Relationship="Self.fk_detailfac_cocin" FromRole="tblCocinero" ToRole="tblDetalleFactura" />
+  </EntityType>
+  <EntityType Name="tblDetalleFactura">
+    <Key>
+      <PropertyRef Name="IdDetalleFactura" />
+    </Key>
+    <Property Name="IdDetalleFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdFactura" Type="Int32" Nullable="false" />
+    <Property Name="IdCocinero" Type="Int32" Nullable="false" />
+    <Property Name="Plato" Type="String" MaxLength="150" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Importe" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="tblCocinero" Relationship="Self.fk_detailfac_cocin" FromRole="tblDetalleFactura" ToRole="tblCocinero" />
+    <NavigationProperty Name="tblFactura" Relationship="Self.fk_detailfac_fac" FromRole="tblDetalleFactura" ToRole="tblFactura" />
+  </EntityType>
+  <EntityType Name="tblFactura">
+    <Key>
+      <PropertyRef Name="IdFactura" />
+    </Key>
+    <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdCamarero" Type="Int32" Nullable="false" />
+    <Property Name="IdMesa" Type="Int32" Nullable="false" />
+    <Property Name="FechaFactura" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblCamarero" Relationship="Self.fk_fact_camarero" FromRole="tblFactura" ToRole="tblCamarero" />
+    <NavigationProperty Name="tblCliente" Relationship="Self.fk_fact_client" FromRole="tblFactura" ToRole="tblCliente" />
+    <NavigationProperty Name="tblDetalleFacturas" Relationship="Self.fk_detailfac_fac" FromRole="tblFactura" ToRole="tblDetalleFactura" />
+    <NavigationProperty Name="tblMesa" Relationship="Self.fk_fac_mesa" FromRole="tblFactura" ToRole="tblMesa" />
+  </EntityType>
+  <EntityType Name="tblMesa">
+    <Key>
+      <PropertyRef Name="IdMesa" />
+    </Key>
+    <Property Name="IdMesa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumMaxComensales" Type="Int32" Nullable="false" />
+    <Property Name="Ubicacion" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tblFacturas" Relationship="Self.fk_fac_mesa" FromRole="tblMesa" ToRole="tblFactura" />
+  </EntityType>
+  <Association Name="fk_fact_camarero">
+    <End Role="tblCamarero" Type="Self.tblCamarero" Multiplicity="1" />
+    <End Role="tblFactura" Type="Self.tblFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCamarero">
+        <PropertyRef Name="IdCamarero" />
+      </Principal>
+      <Dependent Role="tblFactura">
+        <PropertyRef Name="IdCamarero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_fact_client">
+    <End Role="tblCliente" Type="Self.tblCliente" Multiplicity="1" />
+    <End Role="tblFactura" Type="Self.tblFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCliente">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="tblFactura">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detailfac_cocin">
+    <End Role="tblCocinero" Type="Self.tblCocinero" Multiplicity="1" />
+    <End Role="tblDetalleFactura" Type="Self.tblDetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCocinero">
+        <PropertyRef Name="IdCocinero" />
+      </Principal>
+      <Dependent Role="tblDetalleFactura">
+        <PropertyRef Name="IdCocinero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_detailfac_fac">
+    <End Role="tblFactura" Type="Self.tblFactura" Multiplicity="1" />
+    <End Role="tblDetalleFactura" Type="Self.tblDetalleFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFactura">
+        <PropertyRef Name="IdFactura" />
+      </Principal>
+      <Dependent Role="tblDetalleFactura">
+        <PropertyRef Name="IdFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_fac_mesa">
+    <End Role="tblMesa" Type="Self.tblMesa" Multiplicity="1" />
+    <End Role="tblFactura" Type="Self.tblFactura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMesa">
+        <PropertyRef Name="IdMesa" />
+      </Principal>
+      <Dependent Role="tblFactura">
+        <PropertyRef Name="IdMesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InstituteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Students" EntityType="Self.Student" />
+    <EntitySet Name="tblCamareroes" EntityType="Self.tblCamarero" />
+    <EntitySet Name="tblClientes" EntityType="Self.tblCliente" />
+    <EntitySet Name="tblCocineroes" EntityType="Self.tblCocinero" />
+    <EntitySet Name="tblDetalleFacturas" EntityType="Self.tblDetalleFactura" />
+    <EntitySet Name="tblFacturas" EntityType="Self.tblFactura" />
+    <EntitySet Name="tblMesas" EntityType="Self.tblMesa" />
+    <AssociationSet Name="fk_fact_camarero" Association="Self.fk_fact_camarero">
+      <End Role="tblCamarero" EntitySet="tblCamareroes" />
+      <End Role="tblFactura" EntitySet="tblFacturas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_fact_client" Association="Self.fk_fact_client">
+      <End Role="tblCliente" EntitySet="tblClientes" />
+      <End Role="tblFactura" EntitySet="tblFacturas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detailfac_cocin" Association="Self.fk_detailfac_cocin">
+      <End Role="tblCocinero" EntitySet="tblCocineroes" />
+      <End Role="tblDetalleFactura" EntitySet="tblDetalleFacturas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_detailfac_fac" Association="Self.fk_detailfac_fac">
+      <End Role="tblFactura" EntitySet="tblFacturas" />
+      <End Role="tblDetalleFactura" EntitySet="tblDetalleFacturas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_fac_mesa" Association="Self.fk_fac_mesa">
+      <End Role="tblMesa" EntitySet="tblMesas" />
+      <End Role="tblFactura" EntitySet="tblFacturas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

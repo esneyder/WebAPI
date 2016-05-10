@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="appModelStoreContainer" CdmEntityContainer="InstituteEntities">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="appModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCamareroes">
+      <EntityTypeMapping TypeName="appModel.tblCamarero">
+        <MappingFragment StoreEntitySet="tblCamarero">
+          <ScalarProperty Name="IdCamarero" ColumnName="IdCamarero" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblClientes">
+      <EntityTypeMapping TypeName="appModel.tblCliente">
+        <MappingFragment StoreEntitySet="tblCliente">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCocineroes">
+      <EntityTypeMapping TypeName="appModel.tblCocinero">
+        <MappingFragment StoreEntitySet="tblCocinero">
+          <ScalarProperty Name="IdCocinero" ColumnName="IdCocinero" />
+          <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDetalleFacturas">
+      <EntityTypeMapping TypeName="appModel.tblDetalleFactura">
+        <MappingFragment StoreEntitySet="tblDetalleFactura">
+          <ScalarProperty Name="IdDetalleFactura" ColumnName="IdDetalleFactura" />
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="IdCocinero" ColumnName="IdCocinero" />
+          <ScalarProperty Name="Plato" ColumnName="Plato" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFacturas">
+      <EntityTypeMapping TypeName="appModel.tblFactura">
+        <MappingFragment StoreEntitySet="tblFactura">
+          <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdCamarero" ColumnName="IdCamarero" />
+          <ScalarProperty Name="IdMesa" ColumnName="IdMesa" />
+          <ScalarProperty Name="FechaFactura" ColumnName="FechaFactura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMesas">
+      <EntityTypeMapping TypeName="appModel.tblMesa">
+        <MappingFragment StoreEntitySet="tblMesa">
+          <ScalarProperty Name="IdMesa" ColumnName="IdMesa" />
+          <ScalarProperty Name="NumMaxComensales" ColumnName="NumMaxComensales" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
